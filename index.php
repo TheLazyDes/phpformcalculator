@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+       <div class="container">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
         <label for="">First Number</label>
         <input name= "firstNumber"  type="number">
@@ -89,5 +90,6 @@
 
     }
     ?>
+    </div>
 </body>
 </html>
