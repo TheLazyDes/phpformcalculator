@@ -1,0 +1,188 @@
+/* Import cute rounded font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #cceeff, #e6f7ff);
+    overflow: hidden;
+}
+
+/* Soft floating clouds */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 80px;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.6;
+}
+
+body::before {
+    top: 60px;
+    left: 100px;
+    animation: floatCloud 20s linear infinite;
+}
+
+body::after {
+    bottom: 100px;
+    right: 150px;
+    animation: floatCloud 25s linear infinite reverse;
+}
+
+@keyframes floatCloud {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(300px); }
+}
+
+form {
+    background: #fffdf5;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+    position: relative;
+}
+
+/* Duck emoji header */
+form::before {
+    content: "🦆 Duckling Calculator";
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffeb99;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #555;
+    text-align: left;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 15px;
+    border: 2px solid #ffe066;
+    background: #fff;
+    transition: 0.3s ease;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #ffcc00;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.5);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background: #ffcc00;
+    color: #333;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #ffdd33;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+p {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Cute floating duck animation */
+@keyframes floatDuck {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+form {
+    animation: floatDuck 4s ease-in-out infinite;
+}
+
+/* Output Container Styling */
+p {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    animation: popIn 0.4s ease;
+}
+
+/* Success Result Bubble */
+.result {
+    background: #fff3b0;
+    border: 2px solid #ffd43b;
+    color: #6b5500;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(255, 212, 59, 0.3);
+}
+
+/* Little speech bubble tail */
+.result::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    background: #fff3b0;
+    border-left: 2px solid #ffd43b;
+    border-bottom: 2px solid #ffd43b;
+    transform: rotate(45deg);
+}
+
+/* Error Bubble */
+.error {
+    background: #ffe0e6;
+    border: 2px solid #ff6b81;
+    color: #8b1e3f;
+    box-shadow: 0 8px 20px rgba(255, 107, 129, 0.2);
+}
+
+/* Pop animation */
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

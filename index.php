@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
@@ -36,7 +37,8 @@
           //check if empty input exists
 
           if ( empty($firstNumber)||empty($secondNumber)||empty($operator)){
-            echo "<p> please fill all fields</p>";
+         echo "<p class='error'>Please fill all fields 🐥</p>";
+
             $errors= true;
           }
 
@@ -44,7 +46,7 @@
 
 
           if ( !is_numeric($firstNumber)||!is_numeric($secondNumber)){
-            echo "<p> Only numbers please</p>";
+            echo "<p class='error'>Only numbers please 🐥</p>";
             $errors= true;
           }
 
@@ -78,7 +80,8 @@
 
             }
             //outut calculation
-            echo "<p> Result = ". $value ."</p>";
+           echo "<p class='result'>Result = " . $value . " 🦆✨</p>";
+
 
 
 
